@@ -21,9 +21,6 @@ gradle-app.setting
 .idea/**/tasks.xml
 .idea/**/dictionaries
 .idea/**/shelf
-.idea/**/modules
-.idea/compiler.xml
-.idea/modules.xml
 
 # Sensitive or high-churn files
 .idea/**/dataSources/
