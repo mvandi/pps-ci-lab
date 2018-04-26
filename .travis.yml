@@ -1,3 +1,11 @@
 language: java
 script:
   - './gradlew clean build'
+
+deploy:
+  provider: releases
+  api_key: "5d637c67f43e21f0de49aecd14ecc1c56d2fec8c"
+  file: "build/libs/*.jar"
+  skip_cleanup: true
+  on:
+    tags: true

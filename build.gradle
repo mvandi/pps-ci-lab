@@ -1,8 +1,9 @@
 apply plugin: 'java'
 
 // Code quality tools
+apply plugin: 'pmd'
+apply plugin: 'groovy'
 apply plugin: 'checkstyle'
-apply plugin: 'findbugs'
 
 repositories {
     mavenCentral()
@@ -10,6 +11,10 @@ repositories {
 
 sourceCompatibility = jdkVersion
 targetCompatibility = jdkVersion
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.0.6'
+}
 
 checkstyle {
 
@@ -33,6 +38,7 @@ checkstyle {
     //configProperties = ['baseDir': "$project.projectDir"]
 
     //https://discuss.gradle.org/t/some-checkstyle-rules-dont-work-in-gradle/16102/4
+
     checkstyleMain {
         source = sourceSets.main.allSource
     }
