@@ -12,6 +12,9 @@ repositories {
 sourceCompatibility = jdkVersion
 targetCompatibility = jdkVersion
 
+task myJavadocs(type: Javadoc) {
+    source = sourceSets.main.java
+}
 dependencies {
     compile 'org.codehaus.groovy:groovy-all:2.0.6'
 }
