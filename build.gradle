@@ -1,9 +1,8 @@
 apply plugin: 'java'
-sourceCompatibility = 1.8
-apply plugin: 'application'
 
 repositories {
     mavenCentral()
 }
 
-mainClassName = 'AleGnucci.Launcher'
+sourceCompatibility = jdkVersion
+targetCompatibility = jdkVersion
