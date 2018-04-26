@@ -1,4 +1,12 @@
+plugins {
+    id "org.scoverage" version "2.1.0"
+    id "com.github.maiflai.scalatest" version "0.21"
+}
+
 apply plugin: 'java'
+apply plugin: 'scala'
+apply plugin: 'org.scoverage'
+apply plugin: 'com.github.maiflai.scalatest'
 
 // Code quality tools
 apply plugin: 'pmd'
@@ -16,6 +24,12 @@ task myJavadocs(type: Javadoc) {
     source = sourceSets.main.java
 }
 dependencies {
+    compile 'org.scala-lang:scala-library:2.12.2'
+    testCompile 'org.scalatest:scalatest_2.12:3.0.1'
+    testCompile 'org.scalamock:scalamock-scalatest-support_2.12:3.5.0'
+    testRuntime 'org.pegdown:pegdown:1.4.2'
+    scoverage 'org.scoverage:scalac-scoverage-plugin_2.12:1.3.1'
+    scoverage 'org.scoverage:scalac-scoverage-runtime_2.12:1.3.1'
     compile 'org.codehaus.groovy:groovy-all:2.0.6'
 }
 
@@ -56,10 +70,13 @@ checkstyle {
         checkstyle "com.puppycrawl.tools:checkstyle:${checkstyleVersion}"
         checkstyle "com.github.sevntu-checkstyle:sevntu-checks:${sevntuChecksVersion}"
     }
+<<<<<<< HEAD
 }
 
 jar {
     manifest {
         attributes 'Main-Class': 'it.unibo.ci.niklegend.HelloWorld'
     }
+=======
+>>>>>>> 4290b79ac71f9206e730eb711bd447b4035fd742
 }
