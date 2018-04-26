@@ -11,5 +11,4 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="pps-ci-lab_main" />
   </component>
-  <component name="TestModuleProperties" production-module="pps-ci-lab_main" />
 </module>
