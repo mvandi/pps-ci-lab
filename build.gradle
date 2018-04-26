@@ -54,3 +54,9 @@ checkstyle {
         checkstyle "com.github.sevntu-checkstyle:sevntu-checks:${sevntuChecksVersion}"
     }
 }
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'it.unibo.ci.niklegend.HelloWorld'
+    }
+}
