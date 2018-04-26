@@ -6,3 +6,7 @@ repositories {
 
 sourceCompatibility = jdkVersion
 targetCompatibility = jdkVersion
+
+task myJavadocs(type: Javadoc) {
+    source = sourceSets.main.java
+}
