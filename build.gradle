@@ -1,5 +1,9 @@
 apply plugin: 'java'
 
+// Code quality tools
+apply plugin: 'checkstyle'
+apply plugin: 'findbugs'
+
 repositories {
     mavenCentral()
 }
