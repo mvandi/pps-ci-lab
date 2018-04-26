@@ -7,3 +7,7 @@ repositories {
 }
 
 mainClassName = 'AleGnucci.Launcher'
+
+task myJavadocs(type: Javadoc) {
+    source = sourceSets.main.java
+}
