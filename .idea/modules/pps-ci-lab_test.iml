@@ -11,6 +11,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="pps-ci-lab_main" />
+    <orderEntry type="library" name="Gradle: org.codehaus.groovy:groovy-all:2.0.6" level="project" />
   </component>
   <component name="TestModuleProperties" production-module="pps-ci-lab_main" />
 </module>
