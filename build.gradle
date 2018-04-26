@@ -10,3 +10,41 @@ repositories {
 
 sourceCompatibility = jdkVersion
 targetCompatibility = jdkVersion
+
+checkstyle {
+
+    project.ext.checkstyleVersion = '8.9'
+    project.ext.sevntuChecksVersion = '1.29.0'
+
+    repositories {
+        mavenCentral()
+        // we keep artifacts in maven central too, but this is just example of usage from our old maven repo on github
+        maven {
+            url "http://sevntu-checkstyle.github.com/sevntu.checkstyle/maven2"
+        }
+    }
+
+    ignoreFailures = true
+    configFile = file("${project.rootDir}/checkstyle.xml")
+
+    //sourceSets = [sourceSets.main]
+    //showViolations = true
+    //reportsDir = file("$project.buildDir/checkstyleReports")
+    //configProperties = ['baseDir': "$project.projectDir"]
+
+    //https://discuss.gradle.org/t/some-checkstyle-rules-dont-work-in-gradle/16102/4
+    checkstyleMain {
+        source = sourceSets.main.allSource
+    }
+
+    configurations {
+        checkstyle
+    }
+
+    dependencies{
+        assert project.hasProperty("checkstyleVersion")
+
+        checkstyle "com.puppycrawl.tools:checkstyle:${checkstyleVersion}"
+        checkstyle "com.github.sevntu-checkstyle:sevntu-checks:${sevntuChecksVersion}"
+    }
+}
